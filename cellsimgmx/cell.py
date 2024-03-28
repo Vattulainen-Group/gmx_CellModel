@@ -79,21 +79,6 @@ class CellConstructor:
                 z = np.sin(phi) * radius
                 self.particles.append((x, y * cell_radius, z))
                                 
-        elif shape == 'cuboid':
-            #### DOES NOT WORK PROPERLY!!!!
-            # Generate a face centered cubic (FCC) lattice
-            # define particles per lattice to fit them on
-            nr_of_particles = nr_of_particles + 1 # to account for center particle
-            n = int(np.ceil(nr_of_particles**(1/3)))
-            for i in range(n):
-                for j in range(n):
-                    for k in range(n):
-                        if len(self.particles) < nr_of_particles:
-                            x = (i * 2 - n + 1) * (cell_radius*0.2) #need to scale by a factor of ~1/5th to obtain similar volume as sphere
-                            y = (j * 2 - n + 1) * (cell_radius*0.2)
-                            z = (k * 2 - n + 1) * (cell_radius*0.2)
-                            self.particles.append((x, y, z))
-                           
         elif shape == 'ellipsoid':
             #### DOES NOT WORK PROPERLY!!!!
             # Ellipsoids are much more complicated and formal methods require solving of the elliptic integral: https://mathworld.wolfram.com/EllipticIntegraloftheSecondKind.html

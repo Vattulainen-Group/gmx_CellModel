@@ -33,6 +33,12 @@
             "value": "off"
         }
     },
+    "Layer": {
+        "nr_of_layers": {
+            "description": "The total number of layers in the system",
+            "value": 4
+        }
+    },
     "Tissue": {
         "number_of_cells": {
             "description": "The number of cells in the system. Note: enable 'simulation_type' as tissue, otherwise this option is ignored.",

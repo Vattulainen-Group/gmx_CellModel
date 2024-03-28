@@ -6,35 +6,29 @@
 
 ## CellSimGMX
 
-This is a repo for the CellSimGMX project. Only basic Python modules (e.g. numpy, matplotlib) are necessary to use the toolkit. Gromacs is solely used to run simulations, and not for input file generation. This would allow compatability with other MD engines through coordinate and topology conversion.
+This is a repo for the CellSimGMX project. Only basic Python modules (e.g. numpy, matplotlib) are necessary to use the toolkit. GROMACS is solely used to run simulations, and not for input file generation. This would allow compatability with other MD engines through coordinate and topology conversion.
 
 ## Documentation/installation
 
-Note: documentation is currently bcuilt from the master branch. 
+Documentation in Wiki: https://github.com/Vattulainen-Group/gmx_CellModel/wiki
 
-Documentation: https://cellsimgmx.readthedocs.io
-
-Use gromacs-2021.6 --> when running with VS / Go like potentials. 
-
-## Notes/todos
-- Note: stress test tissue packing logic for large number of cells!!
+Use gromacs-2021.6 --> when running with VS / Go like potentials. However, every GROMACS version is supported (as long as it's sourced as 'gmx')
 
 ## Project to do's applied to the code
 
-Essential (High priority):
+High priority
 
-- [x] For automated simulation running, find a way to deal with freezing simulations (and report in cellsimgmx.log file?) --> look at updates of file on disk. Relaunch at max 3 times. 
-- [x] Write a wrapper for running multiple simulations. 
-- [x] Expand JSON with Cell, Tissue, Matrix, System, Simulation headings mirroring code modules. 
-- [ ] Implement virtual site logic. 
 - [x] Move documentation to GitHub and documentat classes/functions
-- [x] Tabulated potential as an option for itp parsing. 
-- [x] Center bead with large sigma (sigma is 10% volume of whole cell) (as a particle type), in first iteration at geometrical center [NUCLEUS option in JSON file]
-- [-] matrix --> grid but also hexagonally packed (+spacing between particles + number of layers + spacing between layers + distance to first cell layer on matrix)
+- [x] Expand JSON with Cell, Tissue, Matrix, System, Simulation headings mirroring code modules. 
+- [-] Write a wrapper for running multiple simulations. 
+- [ ] Allow the selection of different tissue layers (like in epidermis). Cell type in a layer would be identical. At the cell level, multiple cells have to be generated (with also allowed structural differences in nr of particles, radius and shape). Layer is then a new object between Cell and Tissue. 
+- [ ] Generate randomly rotated cells within a Layer. 
+- [ ] Implement virtual site logic (Go like potentials etc) 
+- [ ] Tabulated potential as an option for itp parsing. 
+- [ ] Center bead with large sigma (sigma is 10% volume of whole cell) (as a particle type), in first iteration at geometrical center [NUCLEUS option in JSON file]
+- [ ] matrix --> grid but also hexagonally packed (+spacing between particles + number of layers + spacing between layers + distance to first cell layer on matrix)
 - [ ] Allow volume to be filled with cytoplasmic beads. 
-- [ ] Generate randomly rotated cells within a Layer 
-- [x] Allow the selection of different tissue layers (like in epidermis). Cell type in a layer would be identical. At the cell level, multiple cells have to be generated (with also allowed structural differences in nr of particles, radius and shape). Layer could be a new object between Cell and Tissue?
-- [ ] replace particles randomly with different radii!!!
+- [ ] Replace surface particles randomly with different radii. 
 - [ ] Expand on the matrix options. Distance between particles (eliminate vacuum), and expose the matrix scaling factor to the .JSON. 
 
 Medium priority:
