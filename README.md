@@ -18,9 +18,7 @@ Use gromacs-2021.6 --> when running with VS / Go like potentials. However, every
 
 High priority
 
-- [x] Move documentation to GitHub and documentat classes/functions
-- [x] Expand JSON with Cell, Tissue, Matrix, System, Simulation headings mirroring code modules. 
-- [-] Write a wrapper for running multiple simulations. 
+- [ ] Write a wrapper for running multiple simulations (PARTIALLY done)
 - [ ] Allow the selection of different tissue layers (like in epidermis). Cell type in a layer would be identical. At the cell level, multiple cells have to be generated (with also allowed structural differences in nr of particles, radius and shape). Layer is then a new object between Cell and Tissue. 
 - [ ] Generate randomly rotated cells within a Layer. 
 - [ ] Implement virtual site logic (Go like potentials etc) 
